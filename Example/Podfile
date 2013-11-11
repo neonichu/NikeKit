@@ -1,4 +1,4 @@
 platform :ios, '6.0'
 
-pod 'AFNetworking'
+pod 'NikeKit', :path => '..'
 pod 'AFNetworkActivityLogger', :git => 'https://github.com/jipeprojects/AFNetworkActivityLogger.git'

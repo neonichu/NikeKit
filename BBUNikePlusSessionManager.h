@@ -13,6 +13,7 @@ typedef void(^BBUNikePlusResultBlock)(id responseObject, NSError* error);
 @interface BBUNikePlusSessionManager : AFHTTPSessionManager
 
 -(id)initWithAccessToken:(NSString*)accessToken;
+-(void)activitiesFromDate:(NSDate*)fromDate toDate:(NSDate*)toDate completionHandler:(BBUNikePlusResultBlock)completionHandler;
 -(void)activitiesWithCompletionHandler:(BBUNikePlusResultBlock)completionHandler;
 -(void)summaryWithCompletionHandler:(BBUNikePlusResultBlock)completionHandler;
 

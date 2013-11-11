@@ -21,17 +21,28 @@ PODS:
   - AFNetworking/Serialization (2.0.2)
   - AFNetworking/UIKit (2.0.2):
     - AFNetworking/NSURLConnection
+  - ISO8601DateFormatter (0.7)
+  - KZPropertyMapper (2.0)
+  - NikeKit (0.0.1):
+    - AFNetworking
+    - ISO8601DateFormatter
+    - KZPropertyMapper
 
 DEPENDENCIES:
   - AFNetworkActivityLogger (from `https://github.com/jipeprojects/AFNetworkActivityLogger.git`)
-  - AFNetworking
+  - NikeKit (from `..`)
 
 EXTERNAL SOURCES:
   AFNetworkActivityLogger:
     :git: https://github.com/jipeprojects/AFNetworkActivityLogger.git
+  NikeKit:
+    :path: ..
 
 SPEC CHECKSUMS:
   AFNetworkActivityLogger: 98882140d45e61a1ee8b777628340edc5a1a1f43
   AFNetworking: 22de50ae71ab1c4859773f61068d6fcd1d8f9a4d
+  ISO8601DateFormatter: 00944e437ea647f4244454ce8809d313861d08de
+  KZPropertyMapper: 81c06f0c0760f42731a2b646f93802608d238872
+  NikeKit: 63a958bd4626566a78e379b141c9e63910c23ddc
 
 COCOAPODS: 0.27.1

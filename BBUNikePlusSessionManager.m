@@ -6,6 +6,9 @@
 //  Copyright (c) 2013 Boris Bügling. All rights reserved.
 //
 
+#import <ISO8601DateFormatter/ISO8601DateFormatter.h>
+
+#import "BBUNikePlusActivity.h"
 #import "BBUNikePlusSessionManager.h"
 
 @interface BBUNikePlusSessionManager ()
@@ -52,10 +55,61 @@
              }];
 }
 
+-(NSString*)stringFromDate:(NSDate*)date {
+    ISO8601DateFormatter* formatter = [ISO8601DateFormatter new];
+    formatter.format = ISO8601DateFormatCalendar;
+    return [formatter stringFromDate:date];
+}
+
 #pragma mark -
 
+-(void)activitiesFromDate:(NSDate*)fromDate
+                   toDate:(NSDate*)toDate
+        completionHandler:(BBUNikePlusResultBlock)completionHandler {
+    [self activitiesFromDate:fromDate toDate:toDate paginationPage:0 numberOfRecords:0 completionHandler:completionHandler];
+}
+
+-(void)activitiesFromDate:(NSDate*)fromDate
+                   toDate:(NSDate*)toDate
+           paginationPage:(NSUInteger)page
+          numberOfRecords:(NSUInteger)numberOfRecords
+        completionHandler:(BBUNikePlusResultBlock)completionHandler {
+    NSMutableDictionary* parameters = [@{} mutableCopy];
+    
+    if (fromDate) {
+        parameters[@"startDate"] = [self stringFromDate:fromDate];
+    }
+    
+    if (toDate) {
+        parameters[@"endDate"] = [self stringFromDate:toDate];
+    }
+    
+    if (numberOfRecords > 0) {
+        parameters[@"count"] = [@(numberOfRecords) stringValue];
+    }
+    
+    if (page > 0) {
+        parameters[@"offset"] = [@(page) stringValue];
+    }
+    
+    [self GET:@"me/sport/activities" additionalParameters:parameters completionHandler:^(id responseObject, NSError *error) {
+        if (!responseObject) {
+            completionHandler(nil, error);
+            return;
+        }
+        
+        NSMutableArray* activities = [@[] mutableCopy];
+        
+        for (NSDictionary* activityJSON in responseObject[@"data"]) {
+            [activities addObject:[BBUNikePlusActivity activityFromJSON:activityJSON]];
+        }
+        
+        completionHandler([activities copy], nil);
+    }];
+}
+
 -(void)activitiesWithCompletionHandler:(BBUNikePlusResultBlock)completionHandler {
-    [self GET:@"me/sport/activities" additionalParameters:nil completionHandler:completionHandler];
+    [self activitiesFromDate:nil toDate:nil paginationPage:0 numberOfRecords:0 completionHandler:completionHandler];
 }
 
 -(void)summaryWithCompletionHandler:(BBUNikePlusResultBlock)completionHandler {

@@ -13,7 +13,9 @@
 		869F7188182DD7440091A32D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 869F7187182DD7440091A32D /* main.m */; };
 		869F718C182DD7440091A32D /* BBUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 869F718B182DD7440091A32D /* BBUAppDelegate.m */; };
 		869F718E182DD7440091A32D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 869F718D182DD7440091A32D /* Images.xcassets */; };
-		869F71AD182DD9570091A32D /* BBUNikePlusSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 869F71AC182DD9570091A32D /* BBUNikePlusSessionManager.m */; };
+		869F71B4182FAF330091A32D /* BBUDynamicDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 869F71B3182FAF320091A32D /* BBUDynamicDataSource.m */; };
+		869F71B7182FAF840091A32D /* BBUArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 869F71B6182FAF840091A32D /* BBUArrayDataSource.m */; };
+		869F71BA182FB1570091A32D /* BBUTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 869F71B9182FB1570091A32D /* BBUTableViewController.m */; };
 		DABE495B47C04F5BB62CE91D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2EBB91675F54979BFA3A92F /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -29,9 +31,13 @@
 		869F718B182DD7440091A32D /* BBUAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBUAppDelegate.m; sourceTree = "<group>"; };
 		869F718D182DD7440091A32D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		869F7194182DD7440091A32D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		869F71AB182DD9570091A32D /* BBUNikePlusSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBUNikePlusSessionManager.h; sourceTree = "<group>"; };
-		869F71AC182DD9570091A32D /* BBUNikePlusSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBUNikePlusSessionManager.m; sourceTree = "<group>"; };
 		869F71AE182DE5B00091A32D /* Credentials.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Credentials.h; sourceTree = "<group>"; };
+		869F71B2182FAF320091A32D /* BBUDynamicDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBUDynamicDataSource.h; sourceTree = "<group>"; };
+		869F71B3182FAF320091A32D /* BBUDynamicDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBUDynamicDataSource.m; sourceTree = "<group>"; };
+		869F71B5182FAF840091A32D /* BBUArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBUArrayDataSource.h; sourceTree = "<group>"; };
+		869F71B6182FAF840091A32D /* BBUArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBUArrayDataSource.m; sourceTree = "<group>"; };
+		869F71B8182FB1570091A32D /* BBUTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBUTableViewController.h; sourceTree = "<group>"; };
+		869F71B9182FB1570091A32D /* BBUTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBUTableViewController.m; sourceTree = "<group>"; };
 		F2EBB91675F54979BFA3A92F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE8CAABC4133491CB6C04BF5 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,8 +94,12 @@
 			children = (
 				869F718A182DD7440091A32D /* BBUAppDelegate.h */,
 				869F718B182DD7440091A32D /* BBUAppDelegate.m */,
-				869F71AB182DD9570091A32D /* BBUNikePlusSessionManager.h */,
-				869F71AC182DD9570091A32D /* BBUNikePlusSessionManager.m */,
+				869F71B5182FAF840091A32D /* BBUArrayDataSource.h */,
+				869F71B6182FAF840091A32D /* BBUArrayDataSource.m */,
+				869F71B2182FAF320091A32D /* BBUDynamicDataSource.h */,
+				869F71B3182FAF320091A32D /* BBUDynamicDataSource.m */,
+				869F71B8182FB1570091A32D /* BBUTableViewController.h */,
+				869F71B9182FB1570091A32D /* BBUTableViewController.m */,
 				869F71AE182DE5B00091A32D /* Credentials.h */,
 			);
 			path = Code;
@@ -211,8 +221,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				869F71BA182FB1570091A32D /* BBUTableViewController.m in Sources */,
+				869F71B4182FAF330091A32D /* BBUDynamicDataSource.m in Sources */,
 				869F718C182DD7440091A32D /* BBUAppDelegate.m in Sources */,
-				869F71AD182DD9570091A32D /* BBUNikePlusSessionManager.m in Sources */,
+				869F71B7182FAF840091A32D /* BBUArrayDataSource.m in Sources */,
 				869F7188182DD7440091A32D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
